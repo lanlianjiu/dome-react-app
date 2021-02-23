@@ -49,6 +49,7 @@ const routers = [
 		},
 		component: AsyncComponent(() => import('@/pages/shop/GoodsClass.js'))
 	},
+  
 	// {
 	// 	name: 'Cart',
 	// 	path: '/cart',
