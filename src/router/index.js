@@ -49,19 +49,19 @@ const routers = [
 		},
 		component: AsyncComponent(() => import('@/pages/shop/GoodsClass.js'))
 	},
-	{
-		name: 'Cart',
-		path: '/cart',
-		exact: true,
-		isTab: true,
-		meta: {
-			title: "购物车",
-			keepAlive: true,
-			footer: true,
-			auth: true
-		},
-		component: AsyncComponent(() => import('@/pages/shop/shoppingCart.js'))
-	},
+	// {
+	// 	name: 'Cart',
+	// 	path: '/cart',
+	// 	exact: true,
+	// 	isTab: true,
+	// 	meta: {
+	// 		title: "购物车",
+	// 		keepAlive: true,
+	// 		footer: true,
+	// 		auth: true
+	// 	},
+	// 	component: AsyncComponent(() => import('@/pages/shop/shoppingCart.js'))
+	// },
 	{
 		name: 'User',
 		path: '/user',

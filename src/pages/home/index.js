@@ -376,7 +376,7 @@ class Home extends Component {
       }
       this.setOpenShare()
 
-      let showCoupon = !cookie.get(HAS_COUPON_WINDOW) && res.data.couponList.some(coupon => coupon.is_use)
+      let showCoupon = (!cookie.get(HAS_COUPON_WINDOW)) && res.data.couponList && res.data.couponList.some(coupon => coupon.is_use)
       this.setState({
         showCoupon: showCoupon
       })
