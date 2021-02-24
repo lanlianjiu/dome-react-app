@@ -112,7 +112,7 @@ export default class User extends Component {
         return;
       }
 
-      const headerHeight = this.headerDom.offsetHeight,
+      const headerHeight = this.headerDom?this.headerDom.offsetHeight:0,
         { scrollY } = window, domArr = [];
       const titleDom = document.querySelectorAll('.productSort .listw .title')
       // document.querySelectorAll(".title")是一个NodeList数组，不是一般js数组！
