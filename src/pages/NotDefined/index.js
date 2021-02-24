@@ -1,5 +1,6 @@
+
 import React, { Component } from 'react'
-import img404 from '../../assets/images/404.png'
+import img404 from '@/assets/images/404.png'
 import CurrentPage from './css.js'
 export default class NotDefined extends Component {
 	render() {

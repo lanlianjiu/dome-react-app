@@ -116,7 +116,7 @@ class GetCoupon extends Component {
     })
   }
   getCoupon(id, index) {
-    if (!cookie.has('login_status')) {
+    if (!cookie.has('access-token')) {
       toLogin({ history: this.props.history, location: this.props.location })
       return
     }

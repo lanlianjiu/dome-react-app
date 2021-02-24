@@ -1,7 +1,7 @@
 // import Loadable from 'react-loadable'
 // import User from '@/pages/user/index.js'
 // import Bar from '@/pages/bar/index.js'
-import AsyncComponent from '../components/AsyncComponent/index'
+import AsyncComponent from '@/components/AsyncComponent/index'
 // const loadingComponent = ({ error, pastDelay }) => {
 // 	// if(error) {
 // 	// 	return <div>Error!</div>
@@ -49,20 +49,20 @@ const routers = [
 		},
 		component: AsyncComponent(() => import('@/pages/shop/GoodsClass.js'))
 	},
-  
-	// {
-	// 	name: 'Cart',
-	// 	path: '/cart',
-	// 	exact: true,
-	// 	isTab: true,
-	// 	meta: {
-	// 		title: "购物车",
-	// 		keepAlive: true,
-	// 		footer: true,
-	// 		auth: true
-	// 	},
-	// 	component: AsyncComponent(() => import('@/pages/shop/shoppingCart.js'))
-	// },
+
+	{
+		name: 'Cart',
+		path: '/cart',
+		exact: true,
+		isTab: true,
+		meta: {
+			title: "购物车",
+			keepAlive: true,
+			footer: true,
+			auth: true
+		},
+		component: AsyncComponent(() => import('@/pages/shop/ShoppingCart.js'))
+	},
 	{
 		name: 'User',
 		path: '/user',

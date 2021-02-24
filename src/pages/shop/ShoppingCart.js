@@ -1,9 +1,9 @@
 
 
-import React from 'react'
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import noCartImg from '@/assets/images/noCart.png'
-import Recommend from '../../components/Recommend'
+import Recommend from '@/components/Recommend'
 
 import {
   getCartList,
@@ -12,13 +12,13 @@ import {
   getCartCount
 } from "@/api/store";
 import { postCollectAll } from "@/api/user";
-import cookie from '../../utils/store/cookie'
+import cookie from '@/utils/store/cookie'
 import { mul, add } from "@/utils/bc";
 import debounce from "lodash.debounce";
 import { Toast } from 'antd-mobile'
 const CHECKED_IDS = "cart_checked";
 
-class GoodValid extends React.Component {
+class GoodValid extends Component {
 
   switchSelect(e, index) {
     this.props.switchSelect(index)
@@ -143,8 +143,8 @@ class GoodValid extends React.Component {
   }
 }
 
-
-class ShoppingCart extends React.Component {
+class ShoppingCart extends Component {
+  
   constructor(props) {
     super(props)
     this.state = {
@@ -164,7 +164,6 @@ class ShoppingCart extends React.Component {
     this.carnum();
     this.gainCount()
     this.getCartList()
-
   }
 
   render() {

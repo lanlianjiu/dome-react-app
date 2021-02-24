@@ -1,6 +1,7 @@
+
 import store from '@/store'
-import history from '../config/history'
-import cookie from '../utils/store/cookie'
+import history from '@/config/history'
+import cookie from '@/utils/store/cookie'
 export function toLogin( obj) {
 	// 没有token 跳转到登陆页面
   store.dispatch({

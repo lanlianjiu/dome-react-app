@@ -10,13 +10,14 @@ import newImg from '@/assets/images/news.png'
 import oneImg from '@/assets/images/one.png'
 import twoImg from '@/assets/images/two.png'
 import threeImg from '@/assets/images/three.png'
-import GoodList from '../../components/GoodList/index'
-import PromotionGood from '../../components/PromotionGood/index'
-import CouponWindow from '../../components/CouponWindow/index'
+import GoodList from '@/components/GoodList/index'
+import PromotionGood from '@/components/PromotionGood/index'
+import CouponWindow from '@/components/CouponWindow/index'
 
 const HAS_COUPON_WINDOW = "has_coupon_window";
 
 const BannerSwiper = ({ banner }) => {
+  console.log(banner);
   const swiperOption = {
     pagination: {
       el: '.swiper-pagination',
@@ -148,7 +149,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     }
   }
 }
+
 @connect(mapStateToProps, mapDispatchToProps)
+
 class Home extends Component {
   constructor(props) {
     super(props)
@@ -185,7 +188,7 @@ class Home extends Component {
             <Link className="search acea-row row-middle" to="/search">
               <span className="iconfont icon-xiazai5"></span>
               搜索商品
-					</Link>
+            </Link>
           </div>
         }
         <BannerSwiper banner={this.state.banner}></BannerSwiper>
@@ -349,13 +352,15 @@ class Home extends Component {
     )
   }
   componentDidMount() {
-    console.log(this.props)
     this.getHomeData()
   }
 
   getHomeData() {
+    
     this.props.startLoading()
+
     getHomeData().then(res => {
+
       this.setState({
         logoUrl: res.data.logoUrl,
         banner: res.data.banner,
@@ -368,18 +373,22 @@ class Home extends Component {
         benefit: res.data.benefit,
         couponList: res.data.couponList,
       })
+
       if (res.data.activity.length) {
         var activityOne = res.data.activity.shift();
         this.setState({
           activityOne: activityOne
         })
       }
+
       this.setOpenShare()
 
       let showCoupon = (!cookie.get(HAS_COUPON_WINDOW)) && res.data.couponList && res.data.couponList.some(coupon => coupon.is_use)
+
       this.setState({
         showCoupon: showCoupon
       })
+
       this.props.endLoading()
     })
   }

@@ -1,6 +1,7 @@
+
 import axios from 'axios'
-import { APP_API_URL } from '../config/index'
-import { toMainLogin } from "../libs/login";
+import { APP_API_URL } from '@/config/index'
+import { toMainLogin } from "@/libs/login";
 import cookie from "@/utils/store/cookie";
 
 const instance = axios.create({
