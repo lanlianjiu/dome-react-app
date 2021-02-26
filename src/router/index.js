@@ -1,22 +1,6 @@
-// import Loadable from 'react-loadable'
-// import User from '@/pages/user/index.js'
-// import Bar from '@/pages/bar/index.js'
+
 import AsyncComponent from '@/components/AsyncComponent/index'
-// const loadingComponent = ({ error, pastDelay }) => {
-// 	// if(error) {
-// 	// 	return <div>Error!</div>
-// 	// }else if(pastDelay) {
-// 	// 	return <div></div>
-// 	// }else{
-// 	// 	return null
-// 	// }
-// }
-// 路由懒加载
-// const loadingComponent = ()=>{
-// 	return (
-// 		<p></p>
-// 	)
-// }
+
 const routers = [
 	{
 		name: '/',
@@ -29,12 +13,6 @@ const routers = [
 			backgroundColor: "#fff"
 		},
 		component: AsyncComponent(() => import('@/pages/home/index.js'))
-
-		// component: Loadable({
-		// 	loader: ()=> import ('@/pages/home/index.js'),
-		// 	loading:loadingComponent,
-		// 	delay: 300
-		// })
 	},
 	{
 		name: 'Category',
@@ -255,27 +233,7 @@ const routers = [
     },
     component: AsyncComponent(() => import("@/pages/user/getCoupon.js"))
   },
-  {
-    path: "/news_list",
-    name: "NewsList",
-    meta: {
-      title: "新闻",
-      keepAlive: true,
-      backgroundColor: "#fff"
-    },
-    component: AsyncComponent(() => import("@/pages/shop/news/newsList.js"))
-  },
-  {
-    path: "/news_detail/:id",
-    name: "NewsDetail",
-    meta: {
-      title: "新闻详情",
-      keepAlive: true,
-      backgroundColor: "#fff"
-    },
-    component: AsyncComponent(() => import("@/pages/shop/news/newsDetail.js"))
 
-  },
   {
     path: "/user/sign",
     name: "Sign",

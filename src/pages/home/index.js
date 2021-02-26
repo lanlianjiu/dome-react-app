@@ -17,7 +17,7 @@ import CouponWindow from '@/components/CouponWindow/index'
 const HAS_COUPON_WINDOW = "has_coupon_window";
 
 const BannerSwiper = ({ banner }) => {
-  console.log(banner);
+  
   const swiperOption = {
     pagination: {
       el: '.swiper-pagination',
@@ -149,8 +149,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     }
   }
 }
-
-@connect(mapStateToProps, mapDispatchToProps)
 
 class Home extends Component {
   constructor(props) {
@@ -356,7 +354,7 @@ class Home extends Component {
   }
 
   getHomeData() {
-    
+
     this.props.startLoading()
 
     getHomeData().then(res => {
@@ -402,4 +400,4 @@ class Home extends Component {
   }
 }
 
-export default Home
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

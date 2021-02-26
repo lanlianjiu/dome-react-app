@@ -1,9 +1,9 @@
+
 import React, { Component } from 'react';
 import './App.css';
 import Layouts from './components/Layouts'
 import {
-  BrowserRouter as Router,
-  // Router,
+  Router,
   Switch,
   Route,
   Redirect
@@ -82,7 +82,7 @@ class App extends Component {
   }
 
 }
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
     token: state.app.token,
     isLoading: state.app.isLoading,
